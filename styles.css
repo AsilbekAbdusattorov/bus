@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+#datePicker {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.seats-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+    justify-items: center;
+    margin-bottom: 20px;
+}
+
+.seat {
+    width: 40px;
+    height: 40px;
+    background-color: lightgrey;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.seat.booked {
+    background-color: red;
+    cursor: not-allowed;
+}
+
+#selectedSeats {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Make container width smaller on mobile */
+    }
+
+    .seats-container {
+        grid-template-columns: repeat(5, 1fr); /* Fewer columns for mobile */
+    }
+
+    .seat {
+        width: 30px; /* Smaller seat size on mobile */
+        height: 30px;
+        font-size: 10px;
+    }
+
+    #datePicker {
+        font-size: 14px; /* Smaller date picker font size on mobile */
+    }
+
+    #selectedSeats {
+        font-size: 16px; /* Slightly smaller text on mobile */
+    }
+}
+
+/* Media query for smaller mobile devices */
+@media (max-width: 480px) {
+    .seats-container {
+        grid-template-columns: repeat(4, 1fr); /* Even fewer columns for very small screens */
+    }
+
+    .seat {
+        width: 25px;
+        height: 25px;
+        font-size: 8px; /* Adjust seat font size */
+    }
+
+    #selectedSeats {
+        font-size: 14px; /* Even smaller text on very small screens */
+    }
+}
